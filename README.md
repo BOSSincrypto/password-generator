@@ -1,4 +1,4 @@
-![Password Generator](https://capsule-render.vercel.app/api?type=waving&color=0:10b981,1:06b6d4&height=250&section=header&text=Password%20Generator&fontSize=60&fontColor=ffffff&desc=Cryptographically%20secure%20passwords%20%26%20passphrases&descSize=20&descAlignY=65)
+![Password Generator](.github/banner.svg)
 
 <div align="center">
 

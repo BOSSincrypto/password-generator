@@ -157,25 +157,25 @@ function App() {
               <TabsTrigger value="random" className="data-[state=active]:bg-emerald-600 data-[state=active]:text-white">{t('modeRandom')}</TabsTrigger>
               <TabsTrigger value="passphrase" className="data-[state=active]:bg-emerald-600 data-[state=active]:text-white">{t('modePassphrase')}</TabsTrigger>
             </TabsList>
-            <TabsContent value="random" className="mt-4 space-y-4">
-              <div>
-                <label className="text-sm text-zinc-400 mb-2 block">{t('lengthLabel', length, entropy)}</label>
+            <TabsContent value="random" className="mt-4 space-y-5">
+              <div className="py-1">
+                <label className="text-sm text-zinc-400 mb-1 block">{t('lengthLabel', length, entropy)}</label>
                 <Slider value={[length]} onValueChange={([v]) => setLength(v)} min={6} max={64} step={1} className="w-full" />
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="flex items-center justify-between"><label className="text-sm text-zinc-400">{t('lowercase')}</label><Switch checked={useLowercase} onCheckedChange={setUseLowercase} /></div>
-                <div className="flex items-center justify-between"><label className="text-sm text-zinc-400">{t('uppercase')}</label><Switch checked={useUppercase} onCheckedChange={setUseUppercase} /></div>
-                <div className="flex items-center justify-between"><label className="text-sm text-zinc-400">{t('numbers')}</label><Switch checked={useNumbers} onCheckedChange={setUseNumbers} /></div>
-                <div className="flex items-center justify-between"><label className="text-sm text-zinc-400">{t('symbols')}</label><Switch checked={useSymbols} onCheckedChange={setUseSymbols} /></div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="flex items-center justify-between gap-3 p-2 rounded-lg bg-zinc-800/50"><label className="text-sm text-zinc-300">{t('lowercase')}</label><Switch checked={useLowercase} onCheckedChange={setUseLowercase} /></div>
+                <div className="flex items-center justify-between gap-3 p-2 rounded-lg bg-zinc-800/50"><label className="text-sm text-zinc-300">{t('uppercase')}</label><Switch checked={useUppercase} onCheckedChange={setUseUppercase} /></div>
+                <div className="flex items-center justify-between gap-3 p-2 rounded-lg bg-zinc-800/50"><label className="text-sm text-zinc-300">{t('numbers')}</label><Switch checked={useNumbers} onCheckedChange={setUseNumbers} /></div>
+                <div className="flex items-center justify-between gap-3 p-2 rounded-lg bg-zinc-800/50"><label className="text-sm text-zinc-300">{t('symbols')}</label><Switch checked={useSymbols} onCheckedChange={setUseSymbols} /></div>
               </div>
             </TabsContent>
-            <TabsContent value="passphrase" className="mt-4 space-y-4">
-              <div>
-                <label className="text-sm text-zinc-400 mb-2 block">{t('wordCountLabel', wordCount, entropy)}</label>
+            <TabsContent value="passphrase" className="mt-4 space-y-5">
+              <div className="py-1">
+                <label className="text-sm text-zinc-400 mb-1 block">{t('wordCountLabel', wordCount, entropy)}</label>
                 <Slider value={[wordCount]} onValueChange={([v]) => setWordCount(v)} min={3} max={10} step={1} className="w-full" />
               </div>
-              <div>
-                <label className="text-sm text-zinc-400 mb-2 block">{t('separatorLabel')}</label>
+              <div className="py-1">
+                <label className="text-sm text-zinc-400 mb-1 block">{t('separatorLabel')}</label>
                 <div className="flex gap-2 flex-wrap">
                   {['-', '_', '.', ' ', ''].map((sep) => (
                     <Button key={sep} variant={separator === sep ? 'default' : 'outline'} size="sm" onClick={() => setSeparator(sep)} className={separator === sep ? 'bg-emerald-600 hover:bg-emerald-700' : 'border-zinc-700 hover:bg-zinc-800'}>
@@ -186,8 +186,8 @@ function App() {
               </div>
             </TabsContent>
           </Tabs>
-          <div className="mb-6">
-            <label className="text-sm text-zinc-400 mb-2 block">{t('passwordCountLabel', passwordCount)}</label>
+          <div className="py-1 mb-8">
+            <label className="text-sm text-zinc-400 mb-1 block">{t('passwordCountLabel', passwordCount)}</label>
             <Slider value={[passwordCount]} onValueChange={([v]) => setPasswordCount(v)} min={1} max={20} step={1} className="w-full" />
           </div>
           <Button onClick={generatePasswords} className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-6">
