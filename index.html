@@ -1,10 +1,64 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Генератор паролей</title>
+
+    <!-- Primary SEO -->
+    <title>Password Generator | Secure Random Passwords &amp; Passphrases</title>
+    <meta name="description" content="Free open-source password and passphrase generator. Cryptographically secure, zero telemetry, client-side only. Supports English and Russian." />
+    <meta name="keywords" content="password generator, passphrase generator, secure password, random password, diceware, EFF wordlist, cryptography, zero telemetry, privacy, open source, React, TypeScript" />
+    <meta name="author" content="BOSSincrypto" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#10b981" />
+    <link rel="canonical" href="https://bossincrypto.github.io/password-generator/" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Password Generator" />
+    <meta property="og:title" content="Password Generator | Secure Random Passwords &amp; Passphrases" />
+    <meta property="og:description" content="Free open-source password and passphrase generator. Cryptographically secure, zero telemetry, client-side only. EN / RU." />
+    <meta property="og:url" content="https://bossincrypto.github.io/password-generator/" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Password Generator | Secure Random Passwords &amp; Passphrases" />
+    <meta name="twitter:description" content="Free open-source password and passphrase generator. Cryptographically secure, zero telemetry, client-side only. EN / RU." />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Password Generator",
+      "description": "Free open-source password and passphrase generator with EN/RU support. Zero telemetry, client-side only.",
+      "url": "https://bossincrypto.github.io/password-generator/",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Any",
+      "inLanguage": ["en", "ru"],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <!-- Apply persisted language before React hydrates to avoid flash -->
+    <script>
+      (function () {
+        try {
+          var stored = window.localStorage.getItem('password-generator-lang')
+          if (stored === 'en' || stored === 'ru') {
+            document.documentElement.lang = stored
+          }
+        } catch (_) {}
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>
